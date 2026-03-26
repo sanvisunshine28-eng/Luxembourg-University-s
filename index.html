@@ -25,7 +25,6 @@ header {
     margin: auto;
 }
 
-/* SEARCH BAR */
 input {
     width: 100%;
     padding: 10px;
@@ -34,7 +33,6 @@ input {
     border: 1px solid #ccc;
 }
 
-/* FILTERS */
 .filters {
     display: flex;
     flex-wrap: wrap;
@@ -47,9 +45,8 @@ select {
     border-radius: 5px;
 }
 
-/* CARDS */
 .card {
-    position: relative; /* for positioning the button */
+    position: relative;
     background: white;
     padding: 15px;
     margin: 10px 0;
@@ -58,9 +55,17 @@ select {
 }
 
 .address {
-    font-size: 12px;
     margin-top: 5px;
-    color: #333;
+}
+
+.map {
+    display: inline-block;
+    padding: 6px 10px;
+    background: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 12px;
 }
 
 .info-line {
@@ -71,7 +76,6 @@ select {
     color: #333;
 }
 
-/* APPLY BUTTON */
 a.apply {
     position: absolute;
     top: 15px;
@@ -82,43 +86,16 @@ a.apply {
     text-decoration: none;
     border-radius: 5px;
     font-size: 14px;
-    transition: transform 0.2s;
 }
 
-a.apply:hover {
-    transform: scale(1.05);
-}
-
-/* MOBILE */
 @media (max-width: 600px) {
-    header h1 {
-        font-size: 20px;
-    }
-
     .filters {
         flex-direction: column;
-    }
-
-    .card {
-        font-size: 14px;
     }
 
     a.apply {
         padding: 12px 16px;
         font-size: 16px;
-        top: 10px;
-        right: 10px;
-    }
-}
-
-/* LAPTOP */
-@media (min-width: 800px) {
-    .card {
-        transition: transform 0.2s;
-    }
-
-    .card:hover {
-        transform: scale(1.02);
     }
 }
 </style>
@@ -127,22 +104,18 @@ a.apply:hover {
 
 <header>
 <h1>🎓 Universities in Luxembourg 🇱🇺</h1>
-<p>Search and filter universities</p>
 </header>
 
 <div class="container">
 
-<!-- SEARCH -->
 <input type="text" id="searchBar" placeholder="Search university..." onkeyup="filterUniversities()">
 
-<!-- FILTERS -->
 <div class="filters">
 <select id="languageFilter" onchange="filterUniversities()">
 <option value="all">All Languages</option>
 <option value="English">English</option>
 <option value="French">French</option>
 <option value="German">German</option>
-<option value="Luxembourgish">Luxembourgish</option>
 <option value="Italian">Italian</option>
 </select>
 
@@ -155,73 +128,67 @@ a.apply:hover {
 </div>
 
 <!-- CARDS -->
+
 <div class="card" data-lang="English French German" data-type="Public">
 <h2>University of Luxembourg</h2>
-<div class="address">2, avenue de l'Université, 4365 Esch-sur-Alzette</div>
-<div class="info-line">
-  <span>Bachelor / Master</span>
-  <span>Difficulty: Medium</span>
+<div class="address">
+<a href="https://www.google.com/maps?q=2+Avenue+de+l'Université+Esch-sur-Alzette" target="_blank" class="map">📍 View on Map</a>
 </div>
+<div class="info-line"><span>Bachelor / Master</span><span>Difficulty: Medium</span></div>
 <a href="https://www.uni.lu/en/admissions/" target="_blank" class="apply">Apply Now</a>
 </div>
 
 <div class="card" data-lang="English" data-type="Private">
 <h2>LUNEX University</h2>
-<div class="address">1, rue du St-Esprit, 2090 Luxembourg</div>
-<div class="info-line">
-  <span>Bachelor / Master</span>
-  <span>Difficulty: Medium</span>
+<div class="address">
+<a href="https://www.google.com/maps?q=50+Avenue+du+Parc+des+Sports+Differdange" target="_blank" class="map">📍 View on Map</a>
 </div>
+<div class="info-line"><span>Bachelor / Master</span><span>Difficulty: Medium</span></div>
 <a href="https://lunex.lu/admission/" target="_blank" class="apply">Apply Now</a>
 </div>
 
 <div class="card" data-lang="English" data-type="Business">
 <h2>Luxembourg School of Business</h2>
-<div class="address">10, rue des Mérovingiens, 8070 Bertrange</div>
-<div class="info-line">
-  <span>Master only</span>
-  <span>Difficulty: Hard</span>
+<div class="address">
+<a href="https://www.google.com/maps?q=12C+Impasse+Drosbach+Luxembourg" target="_blank" class="map">📍 View on Map</a>
 </div>
+<div class="info-line"><span>Master only</span><span>Difficulty: Hard</span></div>
 <a href="https://luxsb.lu/programs/" target="_blank" class="apply">Apply Now</a>
 </div>
 
 <div class="card" data-lang="English French" data-type="Private">
-<h2>UBI University</h2>
-<div class="address">5, Rue de la Science, 1449 Luxembourg</div>
-<div class="info-line">
-  <span>Bachelor / Master</span>
-  <span>Difficulty: Medium</span>
+<h2>UBI Business School</h2>
+<div class="address">
+<a href="https://www.google.com/maps?q=Wiltz+Castle+Luxembourg" target="_blank" class="map">📍 View on Map</a>
 </div>
+<div class="info-line"><span>Bachelor / Master</span><span>Difficulty: Medium</span></div>
 <a href="https://ubi-luxembourg.com/admissions" target="_blank" class="apply">Apply Now</a>
 </div>
 
 <div class="card" data-lang="Italian English" data-type="Private">
 <h2>Business Science Institute</h2>
-<div class="address">11, rue du Parc, 2345 Luxembourg</div>
-<div class="info-line">
-  <span>Master only</span>
-  <span>Difficulty: Hard</span>
+<div class="address">
+<a href="https://www.google.com/maps?q=13+Rue+du+Parc+Dudelange" target="_blank" class="map">📍 View on Map</a>
 </div>
+<div class="info-line"><span>Master only</span><span>Difficulty: Hard</span></div>
 <a href="https://www.business-science-institute.com/en/admissions/" target="_blank" class="apply">Apply Now</a>
 </div>
 
 <div class="card" data-lang="English French" data-type="Private">
 <h2>European Business University</h2>
-<div class="address">12, boulevard de la Foire, 1528 Luxembourg</div>
-<div class="info-line">
-  <span>Bachelor / Master</span>
-  <span>Difficulty: Medium</span>
+<div class="address">
+<a href="https://www.google.com/maps?q=12+Boulevard+de+la+Foire+Luxembourg" target="_blank" class="map">📍 View on Map</a>
 </div>
+<div class="info-line"><span>Bachelor / Master</span><span>Difficulty: Medium</span></div>
 <a href="https://www.ebu.ac.lu/admissions" target="_blank" class="apply">Apply Now</a>
 </div>
 
 <div class="card" data-lang="English" data-type="Private">
 <h2>International University Institute of Luxembourg</h2>
-<div class="address">20, Avenue du Parc, 1321 Luxembourg</div>
-<div class="info-line">
-  <span>Master only</span>
-  <span>Difficulty: Medium</span>
+<div class="address">
+<a href="https://www.google.com/maps?q=5+Rue+de+l'Industrie+Foetz" target="_blank" class="map">📍 View on Map</a>
 </div>
+<div class="info-line"><span>Master only</span><span>Difficulty: Medium</span></div>
 <a href="https://www.iuil.lu/admissions" target="_blank" class="apply">Apply Now</a>
 </div>
 
