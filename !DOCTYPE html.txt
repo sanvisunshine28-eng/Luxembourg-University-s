@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Luxembourg Universities</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f6f9;
+    margin: 0;
+}
+
+header {
+    background: #003366;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.container {
+    padding: 20px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+/* SEARCH BAR */
+input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+/* FILTERS */
+.filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+select {
+    padding: 10px;
+    border-radius: 5px;
+}
+
+/* CARDS */
+.card {
+    position: relative; /* for positioning the button */
+    background: white;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.address {
+    font-size: 12px;
+    margin-top: 5px;
+    color: #333;
+}
+
+.info-line {
+    display: flex;
+    gap: 15px;
+    margin-top: 5px;
+    font-size: 12px;
+    color: #333;
+}
+
+/* APPLY BUTTON */
+a.apply {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    padding: 8px 12px;
+    background: #28a745; 
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: transform 0.2s;
+}
+
+a.apply:hover {
+    transform: scale(1.05);
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 20px;
+    }
+
+    .filters {
+        flex-direction: column;
+    }
+
+    .card {
+        font-size: 14px;
+    }
+
+    a.apply {
+        padding: 12px 16px;
+        font-size: 16px;
+        top: 10px;
+        right: 10px;
+    }
+}
+
+/* LAPTOP */
+@media (min-width: 800px) {
+    .card {
+        transition: transform 0.2s;
+    }
+
+    .card:hover {
+        transform: scale(1.02);
+    }
+}
+</style>
+</head>
+<body>
+
+<header>
+<h1>🎓 Universities in Luxembourg 🇱🇺</h1>
+<p>Search and filter universities</p>
+</header>
+
+<div class="container">
+
+<!-- SEARCH -->
+<input type="text" id="searchBar" placeholder="Search university..." onkeyup="filterUniversities()">
+
+<!-- FILTERS -->
+<div class="filters">
+<select id="languageFilter" onchange="filterUniversities()">
+<option value="all">All Languages</option>
+<option value="English">English</option>
+<option value="French">French</option>
+<option value="German">German</option>
+<option value="Luxembourgish">Luxembourgish</option>
+<option value="Italian">Italian</option>
+</select>
+
+<select id="typeFilter" onchange="filterUniversities()">
+<option value="all">All Types</option>
+<option value="Public">Public</option>
+<option value="Private">Private</option>
+<option value="Business">Business</option>
+</select>
+</div>
+
+<!-- CARDS -->
+<div class="card" data-lang="English French German" data-type="Public">
+<h2>University of Luxembourg</h2>
+<div class="address">2, avenue de l'Université, 4365 Esch-sur-Alzette</div>
+<div class="info-line">
+  <span>Bachelor / Master</span>
+  <span>Difficulty: Medium</span>
+</div>
+<a href="https://www.uni.lu/en/admissions/" target="_blank" class="apply">Apply Now</a>
+</div>
+
+<div class="card" data-lang="English" data-type="Private">
+<h2>LUNEX University</h2>
+<div class="address">1, rue du St-Esprit, 2090 Luxembourg</div>
+<div class="info-line">
+  <span>Bachelor / Master</span>
+  <span>Difficulty: Medium</span>
+</div>
+<a href="https://lunex.lu/admission/" target="_blank" class="apply">Apply Now</a>
+</div>
+
+<div class="card" data-lang="English" data-type="Business">
+<h2>Luxembourg School of Business</h2>
+<div class="address">10, rue des Mérovingiens, 8070 Bertrange</div>
+<div class="info-line">
+  <span>Master only</span>
+  <span>Difficulty: Hard</span>
+</div>
+<a href="https://luxsb.lu/programs/" target="_blank" class="apply">Apply Now</a>
+</div>
+
+<div class="card" data-lang="English French" data-type="Private">
+<h2>UBI University</h2>
+<div class="address">5, Rue de la Science, 1449 Luxembourg</div>
+<div class="info-line">
+  <span>Bachelor / Master</span>
+  <span>Difficulty: Medium</span>
+</div>
+<a href="https://ubi-luxembourg.com/admissions" target="_blank" class="apply">Apply Now</a>
+</div>
+
+<div class="card" data-lang="Italian English" data-type="Private">
+<h2>Business Science Institute</h2>
+<div class="address">11, rue du Parc, 2345 Luxembourg</div>
+<div class="info-line">
+  <span>Master only</span>
+  <span>Difficulty: Hard</span>
+</div>
+<a href="https://www.business-science-institute.com/en/admissions/" target="_blank" class="apply">Apply Now</a>
+</div>
+
+<div class="card" data-lang="English French" data-type="Private">
+<h2>European Business University</h2>
+<div class="address">12, boulevard de la Foire, 1528 Luxembourg</div>
+<div class="info-line">
+  <span>Bachelor / Master</span>
+  <span>Difficulty: Medium</span>
+</div>
+<a href="https://www.ebu.ac.lu/admissions" target="_blank" class="apply">Apply Now</a>
+</div>
+
+<div class="card" data-lang="English" data-type="Private">
+<h2>International University Institute of Luxembourg</h2>
+<div class="address">20, Avenue du Parc, 1321 Luxembourg</div>
+<div class="info-line">
+  <span>Master only</span>
+  <span>Difficulty: Medium</span>
+</div>
+<a href="https://www.iuil.lu/admissions" target="_blank" class="apply">Apply Now</a>
+</div>
+
+</div>
+
+<script>
+function filterUniversities() {
+    let search = document.getElementById("searchBar").value.toLowerCase();
+    let lang = document.getElementById("languageFilter").value;
+    let type = document.getElementById("typeFilter").value;
+    let cards = document.querySelectorAll(".card");
+
+    cards.forEach(card => {
+        let name = card.querySelector("h2").innerText.toLowerCase();
+        let cardLang = card.getAttribute("data-lang");
+        let cardType = card.getAttribute("data-type");
+
+        let matchSearch = name.includes(search);
+        let matchLang = (lang === "all" || cardLang.includes(lang));
+        let matchType = (type === "all" || cardType === type);
+
+        card.style.display = (matchSearch && matchLang && matchType) ? "block" : "none";
+    });
+}
+</script>
+
+</body>
+</html>
