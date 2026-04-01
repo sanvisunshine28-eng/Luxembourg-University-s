@@ -1,218 +1,186 @@
-<!DOCTYPE html> 
+```html
+<!DOCTYPE html>
 <html>
 <head>
+<title>University Finder</title>
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="google-site-verification" content="M7S5zqZYsS1|M3">
-<title>Universities in Luxembourg</title>
-</head>
+<meta name="google-site-verification" content="PASTE-YOUR-CODE-HERE" />
 
 <style>
 body {
-    font-family: Arial, sans-serif;
-    background: #f4f6f9;
-    margin: 0;
+    font-family: Arial;
+    padding: 20px;
+    background: #f5f5f5;
 }
 
-header {
-    background: #003366;
-    color: white;
-    padding: 20px;
+h1 {
     text-align: center;
-}
-
-.container {
-    padding: 20px;
-    max-width: 1000px;
-    margin: auto;
-}
-
-input {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
 }
 
 .filters {
     display: flex;
-    flex-wrap: wrap;
     gap: 10px;
+    flex-wrap: wrap;
     margin-bottom: 20px;
 }
 
-select {
-    padding: 10px;
-    border-radius: 5px;
+select, input {
+    padding: 8px;
 }
 
 .card {
-    position: relative;
     background: white;
     padding: 15px;
     margin: 10px 0;
     border-radius: 10px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-}
-
-.address {
-    margin-top: 5px;
-}
-
-.map {
-    display: inline-block;
-    padding: 6px 10px;
-    background: #007bff;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    font-size: 12px;
 }
 
 .info-line {
     display: flex;
-    gap: 15px;
-    margin-top: 5px;
-    font-size: 12px;
-    color: #333;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
 }
 
-a.apply {
-    position: absolute;
-    top: 15px;
-    right: 15px;
+.apply {
+    display: inline-block;
+    margin-top: 10px;
     padding: 8px 12px;
-    background: #28a745; 
+    background: black;
     color: white;
     text-decoration: none;
-    border-radius: 5px;
-    font-size: 14px;
 }
 
-@media (max-width: 600px) {
-    .filters {
-        flex-direction: column;
-    }
+.fav-btn {
+    margin-top: 10px;
+    padding: 6px 12px;
+    border: none;
+    background: #eee;
+    cursor: pointer;
+    border-radius: 6px;
+}
 
-    a.apply {
-        padding: 12px 16px;
-        font-size: 16px;
-    }
+.fav-btn.active {
+    background: #ff4d6d;
+    color: white;
 }
 </style>
+</head>
 
 <body>
 
-<header>
-<h1>🎓 Universities in Luxembourg 🇱🇺</h1>
-</header>
+<h1>University Finder 🌍</h1>
 
-<div class="container">
+<div class="filters">
 
 <input type="text" id="searchBar" placeholder="Search university..." onkeyup="filterUniversities()">
 
-<div class="filters">
 <select id="languageFilter" onchange="filterUniversities()">
-<option value="all">All Languages</option>
+<option value="all">Language</option>
 <option value="English">English</option>
 <option value="French">French</option>
 <option value="German">German</option>
-<option value="Italian">Italian</option>
 </select>
 
 <select id="typeFilter" onchange="filterUniversities()">
-<option value="all">All Types</option>
+<option value="all">Type</option>
 <option value="Public">Public</option>
-<option value="Private">Private</option>
 <option value="Business">Business</option>
 </select>
 
-<!-- UPDATED VISA SUPPORT FILTER -->
 <select id="visaFilter" onchange="filterUniversities()">
-<option value="all">Visa Support</option>
+<option value="all">Visa</option>
+<option value="Strong">Strong</option>
+<option value="Moderate">Moderate</option>
+</select>
+
+<select id="feesFilter" onchange="filterUniversities()">
+<option value="all">Fees</option>
+<option value="Low">Low</option>
+<option value="Medium">Medium</option>
 <option value="High">High</option>
-<option value="Limited">Limited</option>
+</select>
+
+<select id="locationFilter" onchange="filterUniversities()">
+<option value="all">Location</option>
+<option value="Luxembourg City">Luxembourg City</option>
+<option value="Esch-sur-Alzette">Esch-sur-Alzette</option>
+<option value="Differdange">Differdange</option>
+</select>
+
+<select id="rankingFilter" onchange="filterUniversities()">
+<option value="all">Ranking</option>
+<option value="Top">Top</option>
+<option value="Good">Good</option>
+<option value="Average">Average</option>
 </select>
 
 </div>
 
-<!-- CARDS -->
+<!-- UNIVERSITY OF LUXEMBOURG -->
+<div class="card"
+data-lang="English French German"
+data-type="Public"
+data-visa="Strong"
+data-fees="Low"
+data-location="Esch-sur-Alzette"
+data-ranking="Top">
 
-<div class="card" data-lang="English French German" data-type="Public" data-visa="High">
 <h2>University of Luxembourg</h2>
-<div class="address">
-<a href="https://www.google.com/maps?q=2+Avenue+de+l'Université+Esch-sur-Alzette" target="_blank" class="map">📍 View on Map</a>
-</div>
-<div class="info-line"><span>Bachelor / Master</span><span>Difficulty: Medium</span><span>Visa Support: High</span></div>
-<a href="https://www.uni.lu/en/admissions/" target="_blank" class="apply">Apply Now</a>
+
+<div class="info-line">
+<span>Bachelor / Master</span>
+<span>Visa: Strong</span>
+<span>Fees: Low</span>
+<span>Ranking: Top</span>
 </div>
 
-<div class="card" data-lang="English" data-type="Private" data-visa="Limited">
-<h2>LUNEX University</h2>
-<div class="address">
-<a href="https://www.google.com/maps?q=50+Avenue+du+Parc+des+Sports+Differdange" target="_blank" class="map">📍 View on Map</a>
-</div>
-<div class="info-line"><span>Bachelor / Master</span><span>Difficulty: Medium</span><span>Visa Support: Limited</span></div>
-<a href="https://lunex.lu/admission/" target="_blank" class="apply">Apply Now</a>
+<a href="https://www.uni.lu/en/admissions/" target="_blank" class="apply">Apply</a>
+<button class="fav-btn" onclick="toggleFavorite(this)">🤍 Save</button>
 </div>
 
-<div class="card" data-lang="English" data-type="Business" data-visa="Limited">
-<h2>Luxembourg School of Business</h2>
-<div class="address">
-<a href="https://www.google.com/maps?q=12C+Impasse+Drosbach+Luxembourg" target="_blank" class="map">📍 View on Map</a>
-</div>
-<div class="info-line"><span>Bachelor / Master</span><span>Difficulty: Hard</span><span>Visa Support: Limited</span></div>
-<a href="https://luxsb.lu/programs/" target="_blank" class="apply">Apply Now</a>
-</div>
+<!-- ESSCA -->
+<div class="card"
+data-lang="English French"
+data-type="Business"
+data-visa="Moderate"
+data-fees="High"
+data-location="Luxembourg City"
+data-ranking="Good">
 
-<div class="card" data-lang="English French" data-type="Private" data-visa="Limited">
-<h2>UBI Business School</h2>
-<div class="address">
-<a href="https://www.google.com/maps?q=Wiltz+Castle+Luxembourg" target="_blank" class="map">📍 View on Map</a>
-</div>
-<div class="info-line"><span>Bachelor / Master</span><span>Difficulty: Medium</span><span>Visa Support: Limited</span></div>
-<a href="https://ubi-luxembourg.com/admissions" target="_blank" class="apply">Apply Now</a>
-</div>
-
-<div class="card" data-lang="Italian English" data-type="Private" data-visa="Limited">
-<h2>Business Science Institute</h2>
-<div class="address">
-<a href="https://www.google.com/maps?q=13+Rue+du+Parc+Dudelange" target="_blank" class="map">📍 View on Map</a>
-</div>
-<div class="info-line"><span>Master only</span><span>Difficulty: Hard</span><span>Visa Support: Limited</span></div>
-<a href="https://www.business-science-institute.com/en/admissions/" target="_blank" class="apply">Apply Now</a>
-</div>
-
-<div class="card" data-lang="English French" data-type="Private" data-visa="Limited">
-<h2>European Business University</h2>
-<div class="address">
-<a href="https://www.google.com/maps?q=12+Boulevard+de+la+Foire+Luxembourg" target="_blank" class="map">📍 View on Map</a>
-</div>
-<div class="info-line"><span>Bachelor / Master</span><span>Difficulty: Medium</span><span>Visa Support: Limited</span></div>
-<a href="https://www.ebu.ac.lu/admissions" target="_blank" class="apply">Apply Now</a>
-</div>
-
-<div class="card" data-lang="English" data-type="Private" data-visa="Limited">
-<h2>International University Institute of Luxembourg</h2>
-<div class="address">
-<a href="https://www.google.com/maps?q=5+Rue+de+l'Industrie+Foetz" target="_blank" class="map">📍 View on Map</a>
-</div>
-<div class="info-line"><span>Master only</span><span>Difficulty: Medium</span><span>Visa Support: Limited</span></div>
-<a href="https://www.iuil.lu/admissions" target="_blank" class="apply">Apply Now</a>
-</div>
-
-<!-- ESSCA ADDED -->
-<div class="card" data-lang="English French" data-type="Business" data-visa="Limited">
 <h2>ESSCA School of Management</h2>
-<div class="address">
-<a href="https://www.google.com/maps?q=2+Place+de+Strasbourg+Luxembourg" target="_blank" class="map">📍 View on Map</a>
-</div>
-<div class="info-line"><span>Bachelor / Master</span><span>Difficulty: Medium</span><span>Visa Support: Limited</span></div>
-<a href="https://www.essca.fr/en/programmes/" target="_blank" class="apply">Apply Now</a>
+
+<div class="info-line">
+<span>Bachelor / Master</span>
+<span>Visa: Moderate</span>
+<span>Fees: High</span>
+<span>Ranking: Good</span>
 </div>
 
+<a href="https://www.essca.fr/en/programmes/" target="_blank" class="apply">Apply</a>
+<button class="fav-btn" onclick="toggleFavorite(this)">🤍 Save</button>
+</div>
+
+<!-- LSB -->
+<div class="card"
+data-lang="English"
+data-type="Business"
+data-visa="Moderate"
+data-fees="High"
+data-location="Luxembourg City"
+data-ranking="Good">
+
+<h2>Luxembourg School of Business</h2>
+
+<div class="info-line">
+<span>Bachelor / Master</span>
+<span>Visa: Moderate</span>
+<span>Fees: High</span>
+<span>Ranking: Good</span>
+</div>
+
+<a href="https://www.lsb.lu" target="_blank" class="apply">Apply</a>
+<button class="fav-btn" onclick="toggleFavorite(this)">🤍 Save</button>
 </div>
 
 <script>
@@ -221,6 +189,9 @@ function filterUniversities() {
     let lang = document.getElementById("languageFilter").value;
     let type = document.getElementById("typeFilter").value;
     let visa = document.getElementById("visaFilter").value;
+    let fees = document.getElementById("feesFilter").value;
+    let location = document.getElementById("locationFilter").value;
+    let ranking = document.getElementById("rankingFilter").value;
 
     let cards = document.querySelectorAll(".card");
 
@@ -229,16 +200,59 @@ function filterUniversities() {
         let cardLang = card.getAttribute("data-lang");
         let cardType = card.getAttribute("data-type");
         let cardVisa = card.getAttribute("data-visa");
+        let cardFees = card.getAttribute("data-fees");
+        let cardLocation = card.getAttribute("data-location");
+        let cardRanking = card.getAttribute("data-ranking");
 
         let matchSearch = name.includes(search);
         let matchLang = (lang === "all" || cardLang.includes(lang));
         let matchType = (type === "all" || cardType === type);
         let matchVisa = (visa === "all" || cardVisa === visa);
+        let matchFees = (fees === "all" || cardFees === fees);
+        let matchLocation = (location === "all" || cardLocation === location);
+        let matchRanking = (ranking === "all" || cardRanking === ranking);
 
-        card.style.display = (matchSearch && matchLang && matchType && matchVisa) ? "block" : "none";
+        card.style.display =
+            (matchSearch && matchLang && matchType && matchVisa && matchFees && matchLocation && matchRanking)
+            ? "block" : "none";
     });
 }
+
+function toggleFavorite(button) {
+    let card = button.closest(".card");
+    let name = card.querySelector("h2").innerText;
+
+    let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+
+    if (favorites.includes(name)) {
+        favorites = favorites.filter(f => f !== name);
+        button.classList.remove("active");
+        button.innerText = "🤍 Save";
+    } else {
+        favorites.push(name);
+        button.classList.add("active");
+        button.innerText = "❤️ Saved";
+    }
+
+    localStorage.setItem("favorites", JSON.stringify(favorites));
+}
+
+window.onload = function () {
+    let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+
+    document.querySelectorAll(".card").forEach(card => {
+        let name = card.querySelector("h2").innerText;
+        let btn = card.querySelector(".fav-btn");
+
+        if (favorites.includes(name)) {
+            btn.classList.add("active");
+            btn.innerText = "❤️ Saved";
+        }
+    });
+};
 </script>
 
 </body>
 </html>
+```
+
