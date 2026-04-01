@@ -1,8 +1,7 @@
-```html
 <!DOCTYPE html>
 <html>
 <head>
-<title>University Finder</title>
+<title>Universities in Luxembourg</title>
 
 <meta name="google-site-verification" content="PASTE-YOUR-CODE-HERE" />
 
@@ -24,7 +23,7 @@ h1 {
     margin-bottom: 20px;
 }
 
-select, input {
+select {
     padding: 8px;
 }
 
@@ -69,29 +68,15 @@ select, input {
 
 <body>
 
-<h1>University Finder 🌍</h1>
+<h1>Universities in Luxembourg 🌍</h1>
 
 <div class="filters">
 
-<input type="text" id="searchBar" placeholder="Search university..." onkeyup="filterUniversities()">
-
-<select id="languageFilter" onchange="filterUniversities()">
-<option value="all">Language</option>
-<option value="English">English</option>
-<option value="French">French</option>
-<option value="German">German</option>
-</select>
-
-<select id="typeFilter" onchange="filterUniversities()">
-<option value="all">Type</option>
-<option value="Public">Public</option>
-<option value="Business">Business</option>
-</select>
-
 <select id="visaFilter" onchange="filterUniversities()">
 <option value="all">Visa</option>
-<option value="Strong">Strong</option>
-<option value="Moderate">Moderate</option>
+<option value="Easy">Easy</option>
+<option value="Medium">Medium</option>
+<option value="Hard">Hard</option>
 </select>
 
 <select id="feesFilter" onchange="filterUniversities()">
@@ -99,13 +84,6 @@ select, input {
 <option value="Low">Low</option>
 <option value="Medium">Medium</option>
 <option value="High">High</option>
-</select>
-
-<select id="locationFilter" onchange="filterUniversities()">
-<option value="all">Location</option>
-<option value="Luxembourg City">Luxembourg City</option>
-<option value="Esch-sur-Alzette">Esch-sur-Alzette</option>
-<option value="Differdange">Differdange</option>
 </select>
 
 <select id="rankingFilter" onchange="filterUniversities()">
@@ -117,104 +95,99 @@ select, input {
 
 </div>
 
-<!-- UNIVERSITY OF LUXEMBOURG -->
-<div class="card"
-data-lang="English French German"
-data-type="Public"
-data-visa="Strong"
-data-fees="Low"
-data-location="Esch-sur-Alzette"
-data-ranking="Top">
-
+<!-- University of Luxembourg -->
+<div class="card" data-visa="Easy" data-fees="Low" data-ranking="Top">
 <h2>University of Luxembourg</h2>
-
 <div class="info-line">
-<span>Bachelor / Master</span>
-<span>Visa: Strong</span>
-<span>Fees: Low</span>
+<span>📍 Esch-sur-Alzette</span>
+<span>Visa: Easy</span>
+<span>Fees: €500–€800</span>
 <span>Ranking: Top</span>
 </div>
-
+<p>Public university, best option for international students.</p>
 <a href="https://www.uni.lu/en/admissions/" target="_blank" class="apply">Apply</a>
 <button class="fav-btn" onclick="toggleFavorite(this)">🤍 Save</button>
 </div>
 
 <!-- ESSCA -->
-<div class="card"
-data-lang="English French"
-data-type="Business"
-data-visa="Moderate"
-data-fees="High"
-data-location="Luxembourg City"
-data-ranking="Good">
-
+<div class="card" data-visa="Hard" data-fees="High" data-ranking="Good">
 <h2>ESSCA School of Management</h2>
-
 <div class="info-line">
-<span>Bachelor / Master</span>
-<span>Visa: Moderate</span>
-<span>Fees: High</span>
+<span>📍 Luxembourg City</span>
+<span>Visa: Hard</span>
+<span>Fees: €12,000+</span>
 <span>Ranking: Good</span>
 </div>
-
+<p>Private business school, expensive but recognized.</p>
 <a href="https://www.essca.fr/en/programmes/" target="_blank" class="apply">Apply</a>
 <button class="fav-btn" onclick="toggleFavorite(this)">🤍 Save</button>
 </div>
 
 <!-- LSB -->
-<div class="card"
-data-lang="English"
-data-type="Business"
-data-visa="Moderate"
-data-fees="High"
-data-location="Luxembourg City"
-data-ranking="Good">
-
+<div class="card" data-visa="Hard" data-fees="High" data-ranking="Good">
 <h2>Luxembourg School of Business</h2>
-
 <div class="info-line">
-<span>Bachelor / Master</span>
-<span>Visa: Moderate</span>
-<span>Fees: High</span>
+<span>📍 Luxembourg City</span>
+<span>Visa: Hard</span>
+<span>Fees: €10,000+</span>
 <span>Ranking: Good</span>
 </div>
-
+<p>Private business-focused institution.</p>
 <a href="https://www.lsb.lu" target="_blank" class="apply">Apply</a>
 <button class="fav-btn" onclick="toggleFavorite(this)">🤍 Save</button>
 </div>
 
+<!-- LUNEX -->
+<div class="card" data-visa="Medium" data-fees="High" data-ranking="Good">
+<h2>LUNEX University</h2>
+<div class="info-line">
+<span>📍 Differdange</span>
+<span>Visa: Medium</span>
+<span>Fees: €15,000+</span>
+<span>Ranking: Good</span>
+</div>
+<p>Specialized in health and sports sciences.</p>
+<a href="https://www.lunex.lu" target="_blank" class="apply">Apply</a>
+<button class="fav-btn" onclick="toggleFavorite(this)">🤍 Save</button>
+</div>
+
+<!-- UBI -->
+<div class="card" data-visa="Hard" data-fees="High" data-ranking="Average">
+<h2>UBI Business School</h2>
+<div class="info-line">
+<span>📍 Wiltz</span>
+<span>Visa: Hard</span>
+<span>Fees: €13,000+</span>
+<span>Ranking: Average</span>
+</div>
+<p>Private business school with international focus.</p>
+<a href="https://www.ubi.edu" target="_blank" class="apply">Apply</a>
+<button class="fav-btn" onclick="toggleFavorite(this)">🤍 Save</button>
+</div>
+
+<p style="margin-top:30px; font-size:12px; color:gray;">
+*Information is approximate. Always check official university websites before applying.*
+</p>
+
 <script>
 function filterUniversities() {
-    let search = document.getElementById("searchBar").value.toLowerCase();
-    let lang = document.getElementById("languageFilter").value;
-    let type = document.getElementById("typeFilter").value;
     let visa = document.getElementById("visaFilter").value;
     let fees = document.getElementById("feesFilter").value;
-    let location = document.getElementById("locationFilter").value;
     let ranking = document.getElementById("rankingFilter").value;
 
     let cards = document.querySelectorAll(".card");
 
     cards.forEach(card => {
-        let name = card.querySelector("h2").innerText.toLowerCase();
-        let cardLang = card.getAttribute("data-lang");
-        let cardType = card.getAttribute("data-type");
         let cardVisa = card.getAttribute("data-visa");
         let cardFees = card.getAttribute("data-fees");
-        let cardLocation = card.getAttribute("data-location");
         let cardRanking = card.getAttribute("data-ranking");
 
-        let matchSearch = name.includes(search);
-        let matchLang = (lang === "all" || cardLang.includes(lang));
-        let matchType = (type === "all" || cardType === type);
         let matchVisa = (visa === "all" || cardVisa === visa);
         let matchFees = (fees === "all" || cardFees === fees);
-        let matchLocation = (location === "all" || cardLocation === location);
         let matchRanking = (ranking === "all" || cardRanking === ranking);
 
         card.style.display =
-            (matchSearch && matchLang && matchType && matchVisa && matchFees && matchLocation && matchRanking)
-            ? "block" : "none";
+            (matchVisa && matchFees && matchRanking) ? "block" : "none";
     });
 }
 
@@ -254,5 +227,3 @@ window.onload = function () {
 
 </body>
 </html>
-```
-
