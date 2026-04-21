@@ -1,29 +1,43 @@
-```html id="2d0y9m"
 <!DOCTYPE html>
 <html>
 <head>
 <title>Universities in Luxembourg</title>
 
-<meta name="google-site-verification" content="PASTE-YOUR-CODE-HERE" />
-
 <style>
 body {
     font-family: Arial;
+    margin: 0;
+    display: flex;
+}
+
+/* LEFT SIDEBAR */
+.sidebar {
+    width: 220px;
+    background: #003366;
+    color: white;
+    padding: 20px;
+    height: 100vh;
+}
+
+.sidebar h2 {
+    font-size: 18px;
+}
+
+.sidebar select {
+    width: 100%;
+    padding: 8px;
+    margin-top: 10px;
+}
+
+/* RIGHT CONTENT */
+.main {
+    flex: 1;
     background: #f5f5f5;
     padding: 20px;
 }
 
 h1 {
     text-align: center;
-}
-
-.filter {
-    margin: 15px 0;
-    text-align: center;
-}
-
-select {
-    padding: 8px;
 }
 
 .card {
@@ -49,27 +63,12 @@ select {
     text-decoration: none;
 }
 
-.fav-btn {
-    margin-top: 10px;
-    padding: 6px 12px;
-    border: none;
-    background: #eee;
-    cursor: pointer;
-    border-radius: 6px;
-}
-
-.fav-btn.active {
-    background: #ff4d6d;
-    color: white;
-}
-
-/* Map link styling */
-a.map-link {
+.map-link {
     color: #007bff;
     text-decoration: none;
 }
 
-a.map-link:hover {
+.map-link:hover {
     text-decoration: underline;
 }
 </style>
@@ -77,111 +76,50 @@ a.map-link:hover {
 
 <body>
 
-<h1>Universities in Luxembourg 🌍</h1>
+<!-- SIDEBAR -->
+<div class="sidebar">
+<h2>Filter</h2>
 
-<div class="filter">
 <select id="typeFilter" onchange="filterUniversities()">
 <option value="all">All Types</option>
 <option value="Public">Public</option>
 <option value="Private">Private</option>
 <option value="Business">Business School</option>
 </select>
+
 </div>
 
-<!-- University of Luxembourg -->
+<!-- MAIN CONTENT -->
+<div class="main">
+
+<h1>Universities in Luxembourg 🌍</h1>
+
+<!-- University -->
 <div class="card" data-type="Public">
 <h2>University of Luxembourg</h2>
 <div class="info-line">
-<span>📍 <a class="map-link" href="https://www.google.com/maps?q=University+of+Luxembourg+Esch-sur-Alzette" target="_blank">Esch-sur-Alzette</a></span>
+<span>📍 <a class="map-link" href="https://www.google.com/maps?q=University+of+Luxembourg" target="_blank">Esch-sur-Alzette</a></span>
 <span>Established: 2003</span>
 <span>Type: Public</span>
 <span>Visa: Easy</span>
 <span>Fees: €500–€800</span>
-<span>Ranking: Top</span>
 </div>
-<p>Public university, best option for international students.</p>
 <a href="https://www.uni.lu/en/admissions/" target="_blank" class="apply">Apply</a>
-<button class="fav-btn" onclick="toggleFavorite(this)">🤍 Save</button>
-</div>
-
-<!-- ESSCA -->
-<div class="card" data-type="Business">
-<h2>ESSCA School of Management</h2>
-<div class="info-line">
-<span>📍 <a class="map-link" href="https://www.google.com/maps?q=ESSCA+Luxembourg" target="_blank">Luxembourg City</a></span>
-<span>Established: 1909</span>
-<span>Type: Business School</span>
-<span>Visa: Hard</span>
-<span>Fees: €12,000+</span>
-<span>Ranking: Good</span>
-</div>
-<p>Private business school, expensive but recognized.</p>
-<a href="https://www.essca.fr/en/programmes/" target="_blank" class="apply">Apply</a>
-<button class="fav-btn" onclick="toggleFavorite(this)">🤍 Save</button>
-</div>
-
-<!-- LSB -->
-<div class="card" data-type="Business">
-<h2>Luxembourg School of Business</h2>
-<div class="info-line">
-<span>📍 <a class="map-link" href="https://www.google.com/maps?q=Luxembourg+School+of+Business" target="_blank">Luxembourg City</a></span>
-<span>Established: 2014</span>
-<span>Type: Business School</span>
-<span>Visa: Hard</span>
-<span>Fees: €10,000+</span>
-<span>Ranking: Good</span>
-</div>
-<p>Private business-focused institution.</p>
-<a href="https://www.lsb.lu" target="_blank" class="apply">Apply</a>
-<button class="fav-btn" onclick="toggleFavorite(this)">🤍 Save</button>
-</div>
-
-<!-- LUNEX -->
-<div class="card" data-type="Private">
-<h2>LUNEX University</h2>
-<div class="info-line">
-<span>📍 <a class="map-link" href="https://www.google.com/maps?q=LUNEX+University+Differdange" target="_blank">Differdange</a></span>
-<span>Established: 2016</span>
-<span>Type: Private</span>
-<span>Visa: Medium</span>
-<span>Fees: €15,000+</span>
-<span>Ranking: Good</span>
-</div>
-<p>Specialized in health and sports sciences.</p>
-<a href="https://www.lunex.lu" target="_blank" class="apply">Apply</a>
-<button class="fav-btn" onclick="toggleFavorite(this)">🤍 Save</button>
-</div>
-
-<!-- UBI -->
-<div class="card" data-type="Business">
-<h2>UBI Business School</h2>
-<div class="info-line">
-<span>📍 <a class="map-link" href="https://www.google.com/maps?q=UBI+Business+School+Wiltz" target="_blank">Wiltz</a></span>
-<span>Established: 1992</span>
-<span>Type: Business School</span>
-<span>Visa: Hard</span>
-<span>Fees: €13,000+</span>
-<span>Ranking: Average</span>
-</div>
-<p>Private business school with international focus.</p>
-<a href="https://www.ubi.edu" target="_blank" class="apply">Apply</a>
-<button class="fav-btn" onclick="toggleFavorite(this)">🤍 Save</button>
 </div>
 
 <!-- L22 -->
 <div class="card" data-type="Business">
 <h2>L22 School of Business</h2>
 <div class="info-line">
-<span>📍 <a class="map-link" href="https://www.google.com/maps?q=L22+School+of+Business+Luxembourg" target="_blank">Gare (Luxembourg City)</a></span>
+<span>📍 <a class="map-link" href="https://www.google.com/maps?q=L22+School+of+Business" target="_blank">Gare</a></span>
 <span>Established: 2022</span>
 <span>Type: Business School</span>
-<span>Visa: Medium (depends on program)</span>
+<span>Visa: Medium</span>
 <span>Fees: €6,000–€9,000</span>
-<span>Ranking: Average</span>
 </div>
-<p>Private business school offering programs in Finance, HR, and alternance.</p>
 <a href="https://www.l22schoolofbusiness.com/" target="_blank" class="apply">Apply</a>
-<button class="fav-btn" onclick="toggleFavorite(this)">🤍 Save</button>
+</div>
+
 </div>
 
 <script>
@@ -199,27 +137,7 @@ function filterUniversities() {
         }
     });
 }
-
-function toggleFavorite(button) {
-    let card = button.closest(".card");
-    let name = card.querySelector("h2").innerText;
-
-    let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
-
-    if (favorites.includes(name)) {
-        favorites = favorites.filter(f => f !== name);
-        button.classList.remove("active");
-        button.innerText = "🤍 Save";
-    } else {
-        favorites.push(name);
-        button.classList.add("active");
-        button.innerText = "❤️ Saved";
-    }
-
-    localStorage.setItem("favorites", JSON.stringify(favorites));
-}
 </script>
 
 </body>
 </html>
-```
