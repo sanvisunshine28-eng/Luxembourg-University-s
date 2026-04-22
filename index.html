@@ -159,47 +159,127 @@ body {
 </div>
 
 </div>
-
+```html
 <!-- ================= NETHERLANDS ================= -->
 <div id="nl" class="tab">
-<h2>🇳🇱 Universities in Netherlands (English)</h2>
+<h2>🇳🇱 Universities in Netherlands</h2>
+
+<p style="background:white; padding:15px; border-radius:10px;">
+💡 <strong>Student Tip:</strong><br>
+Research universities (WO) focus on theory and rankings.<br>
+Applied universities (HBO) focus on practical skills and jobs.
+</p>
+
+<!-- SUB TABS -->
+<div style="margin-bottom:15px;">
+<button onclick="showNL('research')" class="nl-btn active">Research (WO)</button>
+<button onclick="showNL('applied')" class="nl-btn">Applied (HBO)</button>
+</div>
+
+<!-- ================= RESEARCH ================= -->
+<div id="research" class="nl-section" style="display:block;">
 
 <div class="card">
-<h3>University of Amsterdam <span class="badge">⭐ Best Choice</span></h3>
+<h3>University of Amsterdam ⭐</h3>
 <div class="info-line">
 <span>📍 <a class="map-link" href="https://www.google.com/maps?q=University+of+Amsterdam" target="_blank">Amsterdam</a></span>
-<span>Type: Research</span>
-<span>Language: EN</span>
-<span>Ranking: Top</span>
+<span>Type: Public (Research)</span>
+<span>Language: English</span>
+<span>Fees: €11k–€25k</span>
+<span>Visa: Easy</span>
+<span>Difficulty: Hard</span>
 </div>
+<p><strong>Best for:</strong> Top-ranked global degrees in business, AI, and social sciences.</p>
 <a href="https://www.uva.nl/en" target="_blank" class="apply">Apply</a>
 </div>
 
 <div class="card">
 <h3>Delft University of Technology</h3>
 <div class="info-line">
-<span>📍 <a class="map-link" href="https://www.google.com/maps?q=Delft+University" target="_blank">Delft</a></span>
-<span>Type: Research</span>
-<span>Language: EN</span>
-<span>Ranking: Top</span>
+<span>📍 <a class="map-link" href="https://www.google.com/maps?q=TU+Delft" target="_blank">Delft</a></span>
+<span>Type: Public (Research)</span>
+<span>Language: English</span>
+<span>Fees: €15k–€20k</span>
+<span>Visa: Easy</span>
+<span>Difficulty: Hard</span>
 </div>
+<p><strong>Best for:</strong> Engineering, technology, and innovation careers.</p>
 <a href="https://www.tudelft.nl/en" target="_blank" class="apply">Apply</a>
 </div>
 
+<div class="card">
+<h3>Utrecht University</h3>
+<div class="info-line">
+<span>📍 <a class="map-link" href="https://www.google.com/maps?q=Utrecht+University" target="_blank">Utrecht</a></span>
+<span>Type: Public (Research)</span>
+<span>Language: English</span>
+<span>Fees: €10k–€20k</span>
+<span>Visa: Easy</span>
+<span>Difficulty: Hard</span>
+</div>
+<p><strong>Best for:</strong> Research-based programs and global careers.</p>
+<a href="https://www.uu.nl/en" target="_blank" class="apply">Apply</a>
 </div>
 
-<script>
-function openTab(tabName) {
-    let tabs = document.querySelectorAll(".tab");
-    let buttons = document.querySelectorAll(".navbar button");
+</div>
 
-    tabs.forEach(tab => tab.style.display = "none");
-    buttons.forEach(btn => btn.classList.remove("active"));
+<!-- ================= APPLIED ================= -->
+<div id="applied" class="nl-section" style="display:none;">
 
-    document.getElementById(tabName).style.display = "block";
-    event.target.classList.add("active");
-}
-</script>
+<div class="card">
+<h3>Amsterdam University of Applied Sciences</h3>
+<div class="info-line">
+<span>📍 <a class="map-link" href="https://www.google.com/maps?q=HvA+Amsterdam" target="_blank">Amsterdam</a></span>
+<span>Type: Applied</span>
+<span>Language: English</span>
+<span>Fees: €8k–€12k</span>
+<span>Visa: Medium</span>
+<span>Difficulty: Medium</span>
+</div>
+<p><strong>Best for:</strong> Practical business, media, and tech skills.</p>
+<a href="https://www.hva.nl" target="_blank" class="apply">Apply</a>
+</div>
 
-</body>
-</html>
+<div class="card">
+<h3>HAN University of Applied Sciences</h3>
+<div class="info-line">
+<span>📍 <a class="map-link" href="https://www.google.com/maps?q=HAN+University" target="_blank">Arnhem</a></span>
+<span>Type: Applied</span>
+<span>Language: English</span>
+<span>Fees: €8k–€10k</span>
+<span>Visa: Medium</span>
+<span>Difficulty: Medium</span>
+</div>
+<p><strong>Best for:</strong> Engineering, business, and hands-on learning.</p>
+<a href="https://www.hanuniversity.com" target="_blank" class="apply">Apply</a>
+</div>
+
+<div class="card">
+<h3>Hanze University of Applied Sciences</h3>
+<div class="info-line">
+<span>📍 <a class="map-link" href="https://www.google.com/maps?q=Hanze+University+Groningen" target="_blank">Groningen</a></span>
+<span>Type: Applied</span>
+<span>Language: English</span>
+<span>Fees: €8k–€12k</span>
+<span>Visa: Medium</span>
+<span>Difficulty: Medium</span>
+</div>
+<p><strong>Best for:</strong> International students and career-focused programs.</p>
+<a href="https://www.hanze.nl/en" target="_blank" class="apply">Apply</a>
+</div>
+
+<div class="card">
+<h3>Wittenborg University of Applied Sciences</h3>
+<div class="info-line">
+<span>📍 <a class="map-link" href="https://www.google.com/maps?q=Wittenborg+University" target="_blank">Apeldoorn</a></span>
+<span>Type: Private Applied</span>
+<span>Language: English</span>
+<span>Fees: €9k–€15k</span>
+<span>Visa: Medium</span>
+<span>Difficulty: Easy</span>
+</div>
+<p><strong>Best for:</strong> Business-focused international students.</p>
+<a href="https://www.wittenborg.eu" target="_blank" class="apply">Apply</a>
+</div>
+
+
