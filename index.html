@@ -4,17 +4,10 @@
 <title>Universities in Europe</title>
 
 <style>
-body {
-    font-family: Arial;
-    margin: 0;
-}
+body { font-family: Arial; margin: 0; }
 
 /* NAVBAR */
-.navbar {
-    display: flex;
-    background: #003366;
-}
-
+.navbar { display: flex; background: #003366; }
 .navbar button {
     flex: 1;
     padding: 14px;
@@ -23,18 +16,12 @@ body {
     cursor: pointer;
     font-weight: bold;
 }
+.navbar button.active { background: #ffcc00; }
 
-.navbar button.active {
-    background: #ffcc00;
-}
+/* TAB */
+.tab { display: none; padding: 20px; background: #f5f5f5; }
 
-/* TAB CONTENT */
-.tab {
-    display: none;
-    padding: 20px;
-    background: #f5f5f5;
-}
-
+/* CARD */
 .card {
     background: white;
     padding: 15px;
@@ -58,16 +45,27 @@ body {
     text-decoration: none;
 }
 
-.map-link {
-    color: #007bff;
-    text-decoration: none;
-}
+.map-link { color: #007bff; text-decoration: none; }
 
 .badge {
     background: gold;
     padding: 4px 8px;
     border-radius: 6px;
     font-size: 12px;
+}
+
+/* NETHERLANDS SUB TABS */
+.nl-btn {
+    padding: 10px 15px;
+    margin-right: 10px;
+    border: none;
+    cursor: pointer;
+    background: #ddd;
+    border-radius: 6px;
+}
+.nl-btn.active {
+    background: #003366;
+    color: white;
 }
 </style>
 </head>
@@ -85,9 +83,10 @@ body {
 <h2>🇱🇺 Universities in Luxembourg</h2>
 
 <p style="background:white; padding:15px; border-radius:10px;">
-💡 <strong>Tip:</strong> Public universities are cheaper but harder. Private ones are easier but expensive.
+💡 Public = cheaper but harder. Private = easier but expensive.
 </p>
 
+<!-- 1 -->
 <div class="card">
 <h3>University of Luxembourg <span class="badge">⭐ Best Choice</span></h3>
 <div class="info-line">
@@ -96,70 +95,105 @@ body {
 <span>Language: EN/FR/DE</span>
 <span>Fees: €500–€800</span>
 <span>Visa: Easy</span>
-<span>Difficulty: Medium</span>
 </div>
-<p><strong>Best for:</strong> Affordable and recognized degrees.</p>
-<a href="https://www.uni.lu/en/admissions/" target="_blank" class="apply">Apply</a>
 </div>
 
+<!-- 2 -->
 <div class="card">
 <h3>L22 School of Business</h3>
 <div class="info-line">
-<span>📍 <a class="map-link" href="https://www.google.com/maps?q=L22+Luxembourg" target="_blank">Gare</a></span>
+<span>📍 Gare</span>
 <span>Type: Business</span>
 <span>Language: EN</span>
 <span>Fees: €6k–€9k</span>
 <span>Visa: Medium</span>
-<span>Difficulty: Easy</span>
 </div>
-<p><strong>Best for:</strong> Practical business programs.</p>
-<a href="https://www.l22schoolofbusiness.com/" target="_blank" class="apply">Apply</a>
 </div>
 
+<!-- 3 -->
 <div class="card">
 <h3>LUNEX University</h3>
 <div class="info-line">
-<span>📍 <a class="map-link" href="https://www.google.com/maps?q=LUNEX" target="_blank">Differdange</a></span>
+<span>📍 Differdange</span>
 <span>Type: Private</span>
 <span>Language: EN</span>
 <span>Fees: €15k+</span>
 <span>Visa: Medium</span>
-<span>Difficulty: Medium</span>
 </div>
-<p><strong>Best for:</strong> Health & sports studies.</p>
-<a href="https://www.lunex.lu" target="_blank" class="apply">Apply</a>
 </div>
 
+<!-- 4 -->
 <div class="card">
 <h3>Luxembourg School of Business</h3>
 <div class="info-line">
-<span>📍 <a class="map-link" href="https://www.google.com/maps?q=LSB" target="_blank">Lux City</a></span>
+<span>📍 Lux City</span>
 <span>Type: Business</span>
 <span>Language: EN</span>
 <span>Fees: €10k+</span>
 <span>Visa: Hard</span>
-<span>Difficulty: Medium</span>
 </div>
-<p><strong>Best for:</strong> MBA and careers.</p>
-<a href="https://www.lsb.lu" target="_blank" class="apply">Apply</a>
 </div>
 
+<!-- 5 -->
 <div class="card">
 <h3>ESSCA</h3>
 <div class="info-line">
-<span>📍 <a class="map-link" href="https://www.google.com/maps?q=ESSCA+Luxembourg" target="_blank">Lux City</a></span>
+<span>📍 Lux City</span>
 <span>Type: Business</span>
 <span>Language: EN</span>
 <span>Fees: €12k+</span>
 <span>Visa: Hard</span>
-<span>Difficulty: Medium</span>
 </div>
-<p><strong>Best for:</strong> International business.</p>
-<a href="https://www.essca.fr/en/" target="_blank" class="apply">Apply</a>
 </div>
 
+<!-- 6 -->
+<div class="card">
+<h3>UBI Business School</h3>
+<div class="info-line">
+<span>📍 Wiltz</span>
+<span>Type: Business</span>
+<span>Language: EN</span>
+<span>Fees: €13k+</span>
+<span>Visa: Hard</span>
 </div>
-```html
+</div>
+
+<!-- 7 -->
+<div class="card">
+<h3>European Business University</h3>
+<div class="info-line">
+<span>📍 Lux City</span>
+<span>Type: Private</span>
+<span>Language: EN</span>
+<span>Fees: €5k–€8k</span>
+<span>Visa: Medium</span>
+</div>
+</div>
+
+<!-- 8 -->
+<div class="card">
+<h3>Business Science Institute</h3>
+<div class="info-line">
+<span>📍 Dudelange</span>
+<span>Type: Private</span>
+<span>Language: EN</span>
+<span>Fees: €9k+</span>
+<span>Visa: Medium</span>
+</div>
+</div>
+
+<!-- 9 -->
+<div class="card">
+<h3>IU International University</h3>
+<div class="info-line">
+<span>📍 Luxembourg</span>
+<span>Type: Private</span>
+<span>Language: EN</span>
+<span>Fees: €6k+</span>
+<span>Visa: Medium</span>
+</div>
+</div>
+
 <!-- ================= NETHERLANDS ================= -->
 <div id="nl" class="tab">
 <h2>🇳🇱 Universities in Netherlands</h2>
@@ -178,7 +212,6 @@ Applied universities (HBO) focus on practical skills and jobs.
 
 <!-- ================= RESEARCH ================= -->
 <div id="research" class="nl-section" style="display:block;">
-
 <div class="card">
 <h3>University of Amsterdam ⭐</h3>
 <div class="info-line">
@@ -281,5 +314,38 @@ Applied universities (HBO) focus on practical skills and jobs.
 <p><strong>Best for:</strong> Business-focused international students.</p>
 <a href="https://www.wittenborg.eu" target="_blank" class="apply">Apply</a>
 </div>
+</div>
+</div>
+</div>
+
+</div>
+
+<script>
+function openTab(tabName) {
+    let tabs = document.querySelectorAll(".tab");
+    let buttons = document.querySelectorAll(".navbar button");
+
+    tabs.forEach(tab => tab.style.display = "none");
+    buttons.forEach(btn => btn.classList.remove("active"));
+
+    document.getElementById(tabName).style.display = "block";
+    event.target.classList.add("active");
+}
+
+function showNL(section) {
+    let sections = document.querySelectorAll(".nl-section");
+    let buttons = document.querySelectorAll(".nl-btn");
+
+    sections.forEach(sec => sec.style.display = "none");
+    buttons.forEach(btn => btn.classList.remove("active"));
+
+    document.getElementById(section).style.display = "block";
+    event.target.classList.add("active");
+}
+</script>
+
+</body>
+</html>
+
 
 
